@@ -6,9 +6,9 @@
 
 // Dependencies.
 var express = require('express'),
-	io = require('socket.io'),
 	middleware = require('./middleware.js'),
 	routes = require('./routes.js'),
+	sockets = require('./sockets.js'),
 	debug = require('debug')('ember-stream-mapbox:app');
 
 /**
@@ -44,9 +44,7 @@ module.exports.create = function (done) {
 		debug('Starting app.');
 
 		server = app.listen(app.get('port'));
-
-		// todo init socket.io
-
+		sockets.init(server);
 		next(null, server);
 	};
 
