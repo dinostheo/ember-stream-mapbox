@@ -1,0 +1,23 @@
+.navbar-default .navbar-brand.active:hover {
+	color: #212121;
+}
+
+.navbar-default .navbar-brand:focus {
+	color: #666666;
+}
+
+.menu-item:hover {
+	cursor: pointer;
+}
+
+#root {
+	margin-top: 8em;
+}
+
+#map {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
