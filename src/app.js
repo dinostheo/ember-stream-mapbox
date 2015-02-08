@@ -4,11 +4,11 @@
  * Main application.
  */
 
-/**
- * Dependencies.
- */
+// Dependencies.
 var express = require('express'),
 	io = require('socket.io'),
+	middleware = require('./middleware.js'),
+	routes = require('./routes.js'),
 	debug = require('debug')('ember-stream-mapbox:app');
 
 /**
@@ -31,6 +31,8 @@ module.exports.create = function (done) {
 		debug('Initializing app with config: ', config);
 
 		app.set('port', config.port);
+		middleware.init(app);
+		routes.init(app);
 	};
 
 	/**
@@ -45,7 +47,7 @@ module.exports.create = function (done) {
 
 		// todo init socket.io
 
-		next(server);
+		next(null, server);
 	};
 
 	/**
