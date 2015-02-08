@@ -1,0 +1,8 @@
+# Ignored files:
+npm-debug.log
+.DS_Store
+src/config/config.js
+
+# Ignored directories:
+node_modules
+src/www/bower_components
