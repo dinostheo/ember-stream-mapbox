@@ -5,8 +5,7 @@
  */
 
 // Dependencies.
-var express = require('express'),
-	debug = require('debug')('ember-stream-mapbox:routes');
+var debug = require('debug')('ember-stream-mapbox:routes');
 
 /**
  * Initialize application routes.
@@ -15,12 +14,6 @@ var express = require('express'),
  */
 module.exports.init = function (app) {
 	debug('Initializing routes.');
-
-	/**
-	 * Express serve static middleware.
-	 * This middleware serves out the public 'www' directory.
-	 */
-	app.use(express.static(__dirname + '/www'));
 
 	/**
 	 * Route not found error middleware.

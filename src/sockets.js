@@ -25,13 +25,18 @@ module.exports.init = function (server) {
 
 		// Emit data to a connected client.
 		socket.emit('connected', {
-			status: 'Connected.',
+			event: 'connected.',
 			details: 'Successfully connected to socket.io server.'
 		});
 
 		// Listen to when a client emits a custom event.
-		socket.on('test', function (data) {
-			debug('Socket.io on **test** data: ', data);
+		socket.on('query', function (data) {
+			debug('Sockets on **query**: ', data);
+
+			socket.emit('push', {
+				event: 'push',
+				data: [ 'daniel', 'is', 'cool' ]
+			});
 		});
 
 		// Listen to when a client disconnects with the socket.io server.
