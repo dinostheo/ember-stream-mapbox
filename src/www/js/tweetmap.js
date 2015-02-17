@@ -5,8 +5,8 @@
 
 	// Dependencies.
 	var App = window.E.App,
-		Mapbox = window.L.mapbox,
-		Socket = window.E.Socket;
+		Socket = window.E.Socket
+		Mapbox = window.L.mapbox;
 
 	// Tweetmap View.
 	App.TweetmapView = Ember.View.extend({
